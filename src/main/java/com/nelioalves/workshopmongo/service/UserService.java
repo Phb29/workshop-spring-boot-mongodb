@@ -17,5 +17,15 @@ public class UserService {
 		return repo.findAll();
 		
 	}
+	public User findById(String id) {
+		User user= repo.findById(id).orElse(null);
+		if(user==null) {
+			throw new ObjectNotFoundExceptionexception("objeto nao encontrado");
+	}
+		return user;
+	
+	
+		
+	}
 
 }
